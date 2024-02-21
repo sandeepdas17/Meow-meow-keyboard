@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital@1&family=Open+Sans:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+:root,
+body {
+  background: #0d0d0d;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piano {
+  display: flex;
+  width: 90%; /* Updated to 90% */
+  max-width: 1100px; /* Added max-width */
+  height: 50%;
+  margin: 0 auto;
+  background: #eff0f3;
+  border-radius: 50px;
+  border: 3px solid #2a2a2a;
+  overflow: hidden;
+}
+
+.key {
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  transition: all 0.3s;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.border {
+  border-right: 1.5px solid #2a2a2a;
+}
+
+.key .image {
+  height: 55%;
+  align-self: flex-end;
+  filter: drop-shadow(0.8rem 0.05rem rgb(217, 55, 110, 0.8));
+  transition: all 0.2s;
+}
+
+.active .image {
+  transform: translate(1rem, 1rem);
+  filter: drop-shadow(0.01rem 0.01rem rgb(217, 55, 110, 0.8));
+}
+
+.active .note {
+  color: #d9376e;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d9376e, 0 0 40px #d9376e,
+    0 0 50px #d9376e, 0 0 60px #d9376e, 0 0 70px #d9376e;
+}
+
+.active {
+  background-color: #ff8e3c;
+}
+
+.text {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  padding-top: 1.4em;
+}
+
+.note {
+  font-family: "Archivo", sans-serif;
+  color: #ff8e3c;
+  font-size: 2.7em;
+  text-align: center;
+  text-shadow: 0.05em 0.07em #d9376e;
+}
+
+.action {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 1.15em;
+}
+
+.action img {
+  height: 1.4rem;
+  position: relative;
+  top: 0.4em;
+  box-shadow: 0rem 0.2rem 0rem 0.1rem #0d0d0d;
+  border-radius: 30%;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 968px) {
+  .piano {
+    width: 100%;
+    border-radius: 25px;
+  }
+  .note {
+    font-size: 1.5em;
+  }
+  .action {
+    font-size: 1em;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .key .image {
+    height: 40%;
+  }
+  .action img {
+    height: 1rem;
+  }
+}
+
+/* Media Query for even smaller screens */
+@media (max-width: 480px) {
+  .piano {
+    width: 100%;
+    height: 35%;
+  }
+  .key .image {
+    height: 30%;
+  }
+}
