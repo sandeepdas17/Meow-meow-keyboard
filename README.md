@@ -35,4 +35,4 @@ This kitty-tastic project is all about having fun while learning the magic of DO
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone [repository_url]
+   git clone https://github.com/sandeepdas17/Meow-meow-keyboard
